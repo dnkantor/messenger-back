@@ -58,15 +58,15 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/update', auth, async (req, res) => {
+	console.log(req.body);
 	const {error} = validateUser(req.body);
 	if (error) return res.status(400).send(error.details[0].message);
 
-	const user = await User.findByIdAndUpdate(req.params.id, { 
+	const user = await User.findByIdAndUpdate(req.user._id, { 
 		$set: { 
 			name : req.body.name,
-			email : req.body.email,
-			password : req.body.password
+			email : req.body.email
 		}
 	},{ new : true });
 
