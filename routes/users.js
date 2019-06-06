@@ -5,6 +5,15 @@ const {validateUser} = require('../validate');
 const User = require('../models/user');
 const mongoose = require('mongoose');
 const router = express.Router();
+const auth = require('../middleware/auth');
+
+router.get('/me', auth, async (req, res) => {
+		const user = await User.findById(req.user._id);
+
+		if (!user) return res.status(404).send("Sorry, that user ID does not exist."); 
+		
+		res.send(user); 
+});
 
 router.get('/', async (req, res) => {
 	res.send(await User.find().sort('name'));

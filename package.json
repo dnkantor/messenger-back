@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt": "^3.0.6",
     "config": "^3.1.0",
+    "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
     "joi": "^14.3.1",
     "joi-objectid": "^2.0.0",
