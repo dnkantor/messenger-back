@@ -1,0 +1,34 @@
+{
+  "name": "basic-node-server",
+  "version": "1.0.0",
+  "description": "This is a boilerplate for future node servers",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node josh-changes/app/server.js",
+    "dev": "node josh-changes/app/server.js development",
+    "test": "node josh-changes/app/server.js testing",
+    "prod": "node josh-changes/app/server.js production",
+    "lint": "eslint *.js app",
+    "lint:fix": "eslint *.js app --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshmsamuels/basic-node-server.git"
+  },
+  "author": "Joshua Samuels",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshmsamuels/basic-node-server/issues"
+  },
+  "homepage": "https://github.com/joshmsamuels/basic-node-server#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mkdirp": "^0.5.1",
+    "rfr": "^1.2.3",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0"
+  }
+}
